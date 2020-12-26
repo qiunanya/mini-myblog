@@ -1,0 +1,31 @@
+/* pages/home/home.wxss */
+.container_wrap {
+    text-align: center;
+    padding: 20rpx 30rpx;
+}
+
+.title {
+    display: block;
+}
+
+/* 自定义模板样式，模板里定义不生效，在这里测试生效 */
+.template_bd {
+    background-color: #c6fced;
+}
+
+.red {
+    color: red;
+}
+
+.image_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.img {
+    margin: 12rpx 12rpx;
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 12rpx;
+}
