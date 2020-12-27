@@ -46,7 +46,12 @@ App({
       // 废掉后建议使home.js/home.wxml用按钮获取用户信息方式
       wx.getUserInfo({
           complete: (res) => {
-              console.log('获取用户信息一', res);
+              const user = res.userInfo || '暂无用户';
+            try {
+                wx.setStorageSync('userInfo', res.userInfo)
+              } catch (e) { 
+                  console.log(e)
+              }
         },
       })
 

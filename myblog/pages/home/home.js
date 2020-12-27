@@ -11,6 +11,13 @@ Page({
    * 页面的初始数据
    */
     data: {
+        background: ['/assets/home/map1.png', '/assets/home/map2.png', '/assets/home/map.png'],
+        indicatorDots: true,
+        vertical: false,
+        autoplay: true,
+        interval: 2000,
+        duration: 500,
+        userInfo:{},
         name: '我是第一个小程序',
         students: [
             { id: 1, name: '科比', age: '21' },
@@ -234,57 +241,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
     onLoad: function (options) {
-        // 1、发起数据请求，域名或接口ip必须进行配置，否则报错
-        // wx.request({
-        //     url: 'http://123.207.32.32:8000/recommend',
-        //     method: 'get',
-        //     success:function (res) {
-        //         console.log('网络请求结果',res);
-        //     }
-        // })
-
-
-        // 2、 http://httpbin.org/post 模拟请求地址，可以传参测试请求方式是否正确
-        // wx.request({
-        //     url: 'http://httpbin.org/post',
-        //     method: 'post',
-        //     data: {
-        //         name: '邱南亚',
-        //         age: 154,
-        //         height: 152
-        //     },
-        //     success:function (res) {
-        //         console.log('网络请求结果',res);
-        //     },
-        //     fail:function (res){
-        //         console.log(res)
-        //     }
-        // })
-
-        // 3、 使用自己封装好的方法进行调用
-        //  Promise 最大的好处就是防止出现回调地狱
-        request({
-            url: 'http://httpbin.org/post',
-            data: {
-                name: '邱南亚',
-                age: 154,
-                height: 152
-            },
-            method: 'post'
-        }).then(res =>{
-            console.log(res,111)
-        }).catch(err =>{
-            console.log(err, 222)
-        })
-
-    // 使用自定义方法，保留两位小数
-    this.setData({num: utils.twoDecimal(this.data.num)})
-    // 赋值动态显示时间
-    setInterval(() =>{
-        this.setData({
-            currentTime: new Date().toLocaleString()
-        })
-    }, 1000)
+        try {
+            var user = wx.getStorageSync('userInfo')
+            if (user) {
+               console.log(user)
+               this.setData({
+                   userInfo: user
+               })
+            }
+          } catch (e) {
+            console.log(e)
+          }
   },
 
   /**

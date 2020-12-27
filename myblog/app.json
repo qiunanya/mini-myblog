@@ -9,8 +9,8 @@
         ],
         "window": {
                 "backgroundTextStyle": "light",
-                "navigationBarBackgroundColor": "#d35d6e",
-                "navigationBarTitleText": "我的小程序 DEMO",
+                "navigationBarBackgroundColor": "#60D5C5",
+                "navigationBarTitleText": "幸运的糖果",
                 "navigationBarTextStyle": "white",
                 "backgroundColor": "#16697a",
                 "enablePullDownRefresh": true
