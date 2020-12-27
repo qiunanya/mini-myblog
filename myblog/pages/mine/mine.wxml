@@ -1,26 +1,26 @@
-<!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
-<view style="color:red;">利用小程序内置属性标签展示用户信息</view>
-<view> 用户昵称：
-	<open-data type="userNickName" />
+<!-- pages/mine/mine.wxml -->
+<view class="mine-contianer">
+    <view class="user">
+        <image wx:if="{{userInfo.avatarUrl}}" src="{{userInfo.avatarUrl}}"></image>
+        <image wx:else src="/assets/home/demo.png"></image>
+        <view wx:if="{{userInfo.nickName}}">{{userInfo.nickName}}</view>
+        <view wx:else>蓦然</view>
+    </view>
 </view>
-<view style="width:200rpx;height:200rpx;"> 用户头像：
-	<open-data type="userAvatarUrl" />
-</view>
-<view> 用户用户性别：
-	<open-data type="userGender" />
-</view>
-
-<view> 用户拉取群名称：
-	<open-data type="groupName" />
-</view>
-<view> 用户所在国家：
-	<open-data type="userCountry" />
-</view>
-<view>用户所在省份：
-	<open-data type="userProvince" />
-</view>
-<view> 用户所在城市：
-	<open-data type="userCity" />
-</view>
-
+<i-cell-group>
+    <i-cell title="我的收藏" is-link>
+        <i-icon slot="icon" type="collection" size="28" color="#b1c33c" />
+    </i-cell>
+    <i-cell title="我的博文" is-link url="/pages/dashboard/index">
+        <i-icon slot="icon" type="document" size="28" color="#b1c33c" />
+    </i-cell>
+    <i-cell title="我的粉丝" is-link url="/pages/dashboard/index">
+        <i-icon slot="icon" type="group" size="28" color="#3c72c3" />
+    </i-cell>
+    <i-cell title="我的点赞记录" is-link url="/pages/dashboard/index" only-tap-footer>
+        <i-icon slot="icon" type="like" size="28" color="#f56990" />
+    </i-cell>
+    <i-cell title="开启授权">
+        <switch slot="footer" checked />
+    </i-cell>
+</i-cell-group>
