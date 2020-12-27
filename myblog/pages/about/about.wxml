@@ -12,7 +12,7 @@
     </view>
 </i-panel>
 <i-panel title="资料网址">
-    <view style="padding: 8px;">Gihub项目源码：https://github.com/qiunanya/myblog</view>
+    <view style="padding: 8px;">Gihub源码：https://github.com/qiunanya/mini-myblog</view>
     <view style="padding: 8px;">Iviewui地址： https://weapp.iviewui.com</view>
     <view style="padding: 8px;">Iconfont地址：https://www.iconfont.cn/</view>
     <view style="padding: 8px;">颜色面板：https://colorhunt.co</view>
